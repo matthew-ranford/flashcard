@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>Dev Academy Phase 1 Express Boilerplate</title>
-</head>
+ <div class="app">
+      <h1 class="title">Welcome to Flash Cards</h1>
+      <a class="nav" href="/add-modify">Add-Modify</a>
 
-<body>
-  {{ hi, i am index }}
-</body>
+<h2 class="title">Add a new flash card</h2>
 
-</html>
+<form class="form" action="/new" method="post">
+  <label for="name" class="form-item">
+    Question: <input type="text" name="name" id="name">
+  </label>
+<br>
+  
+  <label for="image" class="form-item">
+    Answer: <input type="text" name="image" id="image">
+  </label>
+<br>
+<br>
+  <input type="submit" value="Submit">
+</form>

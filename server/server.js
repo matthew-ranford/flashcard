@@ -12,7 +12,7 @@ import home from './routes/home.js'
 const server = express()
 
 // Server configuration
-const publicFolder = Path.resolve('public')
+const publicFolder = Path.resolve('./server/routes/public/main.css')
 server.use(express.static(publicFolder))
 server.use(express.urlencoded({ extended: false }))
 

@@ -1,3 +1,10 @@
 .title {
   color: red;
 }
+
+.card {
+  background-color: blue;
+  width: 80%; 
+  height: 100px;
+  font-size: 300%;
+}

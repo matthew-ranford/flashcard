@@ -1,34 +1,69 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-.card {
-  color: blue;
-  width: 80%; 
-  height: auto;
-  font-size: 300%;
-}
-</style>
-</head>
 
-<body>
-  <div class="card">
-
-  </div>
-</body>
-</html> --}}
 
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/add-modify">Add or Modify</a></li>
         <li><a href="/test">Test</a></li>
-         <li><a href="/edithub">Edit</a></li>
+         <li><a href="/edit-hub">Edit</a></li>
       </ul>
     </nav>
 
-<h1>THIS IS TEST PAGE!</h1>
+
+    <style>
+        .flash-card {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .flash-card .question {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .flash-card .content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .flash-card.show-answer .content {
+            display: block;
+        }
+    </style>
+    <div class="flash-card" onclick="revealAnswer(this)">
+        <div class="question">
+            {{question}}
+        </div>
+        <div class="content">
+            {{answer}}
+        </div>
+    </div>
+
+    <script>
+        function revealAnswer(card) {
+            if (card.classList.contains("show-answer")) {
+                // If answer is already revealed, redirect to example.com
+                window.location.href = "/test";
+            } else {
+                // Otherwise, reveal the answer
+                card.classList.add("show-answer");
+            }
+        }
+    </script>

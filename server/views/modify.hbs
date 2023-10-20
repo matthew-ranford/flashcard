@@ -4,7 +4,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/test">Test</a></li>
-         <li><a href="/edithub">Edit</a></li>
+         <li><a href="/edit-hub">Edit</a></li>
       </ul>
     </nav>
 
@@ -12,16 +12,22 @@
 <h2 class="title">Add a new flash card</h2>
 
 <form class="form" action="/new" method="post">
-  <label for="name" class="form-item">
-    Question: <input type="text" name="name" id="name">
+  <label for="question" class="form-item">
+    Question: <input type="text" name="question" id="question">
   </label>
 <br>
 <br>
   
-  <label for="image" class="form-item">
-    Answer: <input type="text" name="image" id="image">
+  <label for="answer" class="form-item">
+    Answer: <input type="text" name="answer" id="answer">
   </label>
 <br>
 <br>
   <input type="submit" value="Create">
+</form>
+<br>
+
+
+
+  <input type="submit" value="Delete">
 </form>

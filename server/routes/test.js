@@ -9,7 +9,18 @@ testPage.get('/test', async (req, res) => {
     await fsPromises.readFile(Path.resolve('server/data/data.json'), 'utf-8')
   )
 
-  res.render('test', json)
+  const randomNum = getRandomInt(0, json.data.length)
+
+  res.render('test', {
+    question: json.data[randomNum].question,
+    answer: json.data[randomNum].answer,
+  })
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min)) + min
+  }
 })
 
 export default testPage
